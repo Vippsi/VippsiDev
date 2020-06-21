@@ -177,8 +177,19 @@
 .contactForm-container {
   display: flex;
   background-color: #27262c;
-  height: 75vh;
+  height: 65vh;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.contactForm-container h3 {
+  font-size: 3rem;
+}
+.contactForm-container .dash {
+  color: #FEFCFD;
+  align-self: center;
+  font-size: 4rem;
+  margin-bottom: 1%;
 }
 .contactForm-container .form-container-div {
   display: flex;
@@ -186,7 +197,6 @@
   justify-content: space-evenly;
   align-items: center;
   width: 50%;
-  height: 100%;
 }
 .contactForm-container .form-container-div form {
   width: 85%;
@@ -208,6 +218,7 @@
   background-color: #1c1c21;
   width: 400px;
   border-radius: 5px;
+  color: white;
 }
 .contactForm-container .form-container-div .textInputBox ::placeholder {
   color: white;
@@ -216,5 +227,5 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5%;
+  margin: 5% 0;
 }
