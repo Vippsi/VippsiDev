@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../../img/hero image.svg'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Header = () => {
     return (
         <div className='header-div'>
@@ -7,7 +8,8 @@ const Header = () => {
             <div className='text-div'>
                 <h1 className='header-h1'>Jonathan Thornton</h1>
                 <p className='header-info'>Front End Developer</p>
-                <button className='header-button'>See my work</button>
+                {/* <button className='header-button' onClick >See my work</button> */}
+                <AnchorLink  className='header-button' href='#carousel'>See my work</AnchorLink>
                 
             </div>
             

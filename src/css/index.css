@@ -30,6 +30,7 @@
   font-size: 5rem;
   color: #FEFCFD;
   margin-bottom: 1%;
+  font-weight: 400;
 }
 .header-div .text-div .header-info {
   font-size: 2rem;
@@ -43,10 +44,12 @@
   border: 2px double #F0C808;
   padding: 1%;
   font-weight: 500;
+  text-decoration: none;
 }
 .header-div .text-div .header-button:hover {
   font-weight: 400;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 * {
   color: #FEFCFD;
@@ -126,7 +129,7 @@
 .carousel-container {
   display: flex;
   justify-content: center;
-  background-color: #42424D;
+  background-color: #42424d;
   height: 80vh;
   align-items: center;
   flex-direction: column;
@@ -138,24 +141,37 @@
   color: #fefcfd;
 }
 .carousel-container .dash {
-  color: #FEFCFD;
+  color: #fefcfd;
   align-self: center;
   font-size: 4rem;
   margin-bottom: 1%;
 }
-.carousel-container .carousel-control-next-icon {
-  height: 40px;
-  width: 40px;
-}
-.carousel-container .carousel-control-prev-icon {
-  height: 40px;
-  width: 40px;
-}
 .carousel-container .carousel {
   display: flex;
-  height: 500px;
+  height: 100%;
   width: 85%;
-  box-shadow: 0px -1px 15px -1px rgba(0, 0, 0, 0.75);
+  align-items: center;
+  border: 2px double yellow;
+}
+.carousel-container .carousel .carousel-control-next {
+  margin-top: 15%;
+  margin-right: 3%;
+  width: 40px;
+  height: 40px;
+}
+.carousel-container .carousel .carousel-control-next .carousel-control-next-icon {
+  height: 40px;
+  width: 40px;
+}
+.carousel-container .carousel .carousel-control-prev {
+  margin-top: 15%;
+  margin-left: 3%;
+  width: 40px;
+  height: 40px;
+}
+.carousel-container .carousel .carousel-control-prev .carousel-control-prev-icon {
+  height: 40px;
+  width: 40px;
 }
 .carousel-container .carousel .carousel-item {
   height: 50%;
@@ -172,7 +188,63 @@
 .carousel-container .carousel .carousel-item .carousel-caption h3 {
   font-weight: 500;
   align-self: center;
-  color: #FEFCFD;
+  color: #fefcfd;
+}
+.bigCardGroupDiv {
+  align-self: center;
+  height: ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bigCardGroupDiv .cardGroupDiv {
+  margin: 1% 1%;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+.bigCardGroupDiv .cardGroupDiv .cardButtons {
+  color: black;
+}
+.cardContainer {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  min-height: 550px;
+}
+.cardContainer .cardDiv {
+  display: flex;
+  border: 2px solid blue;
+  width: 45%;
+  flex-direction: column;
+  height: 100%;
+}
+.cardContainer .cardDiv .cardImgDiv {
+  display: flex;
+  justify-content: center;
+  border: 1px solid green;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  align-self: center;
+  overflow: hidden;
+}
+.cardContainer .cardDiv .cardImgDiv img {
+  width: 100%;
+  object-fit: cover;
+}
+.cardContainer .cardDiv .cardContentDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #999999;
+  border: 1px solid red;
+}
+.cardContainer .cardDiv .cardContentDiv .cardTextDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .contactForm-container {
   display: flex;
@@ -186,7 +258,7 @@
   font-size: 3rem;
 }
 .contactForm-container .dash {
-  color: #FEFCFD;
+  color: #fefcfd;
   align-self: center;
   font-size: 4rem;
   margin-bottom: 1%;
@@ -213,6 +285,23 @@
 }
 .contactForm-container .form-container-div form .messageInputBox ::placeholder {
   color: white;
+}
+.contactForm-container .form-container-div form .formButton {
+  width: 120px;
+  align-self: center;
+  margin-top: 3%;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fefcfd;
+  border: 2px double #f0c808;
+  padding: 0.5%;
+  font-weight: 500;
+  text-decoration: none;
+}
+.contactForm-container .form-container-div form .formButton:hover {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 .contactForm-container .form-container-div .textInputBox {
   background-color: #1c1c21;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   TextField,
   FormGroup,
@@ -30,18 +30,74 @@ export const ContactForm = (props) => {
   };
 
   const [form, setForm] = useState(initialValues);
+  const [nameShrinkState, setNameShrinkState] = useState(false);
+  const [messageShrinkState, setMessageShrinkState] = useState(false);
+  const [emailShrinkState, setEmailShrinkState] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [nameFocused, setNameFocus] = useState(false);
+  const [emailFocused, setEmailFocus] = useState(false);
+  const [messageFocused, setMessageFocus] = useState(false);
 
   const handleChanges = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    setForm({ [name]: value });
+    setForm({ ...form, [name]: value });
+  };
+
+  useEffect(() => {
+    if (form.name.length > 0) {
+      setNameShrinkState(true);
+    } else {
+      setNameShrinkState(false);
+    }
+
+    if (form.message_html.length > 0) {
+      setMessageShrinkState(true);
+    } else {
+      setMessageShrinkState(false);
+    }
+
+    if (form.email.length > 0) {
+      setEmailShrinkState(true);
+    } else {
+      setEmailShrinkState(false);
+    }
+  }, [form]);
+
+  const handleNameBlur = () => {
+    setNameFocus(false);
+  };
+  const handleEmailBlur = () => {
+    setEmailFocus(false);
+  };
+  const handleMessageBlur = () => {
+    setMessageFocus(false);
+  };
+
+  const checkIfNameFocused = (e) => {
+    const name = e.target.name;
+    if (name === "name") {
+      setNameFocus(true);
+    } else setNameFocus(false);
+  };
+  const checkIfEmailFocused = (e) => {
+    const name = e.target.name;
+    if (name === "email") {
+      setEmailFocus(true);
+    } else setEmailFocus(false);
+  };
+  const checkIfMessageFocused = (e) => {
+    const name = e.target.name;
+    if (name === "message_html") {
+      setMessageFocus(true);
+    } else setMessageFocus(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const templateId = "template_aFNUvY3s";
+    const templateId = "vippsi_dev";
 
     const variables = {
       message_html: form.message_html,
@@ -58,7 +114,12 @@ export const ContactForm = (props) => {
         variables
       )
       .then((res) => {
-        console.log("Email successfully sent!");
+        console.log(res, "Email successfully sent!");
+        setSuccessMessage(true);
+        console.log("setting true");
+        setTimeout(() => {
+          setSuccessMessage(false);
+        }, 5000);
       })
       // Handle errors here however you like, or use a React error boundary
       .catch((err) =>
@@ -75,16 +136,33 @@ export const ContactForm = (props) => {
   return (
     <div className="contactForm-container">
       <h3>Contact Me</h3>
+      {successMessage && <div>Your message was sent!</div>}
       <div className="dash">&mdash;</div>
       <div className="form-container-div">
         <form onSubmit={handleSubmit}>
           <div className="textField-div">
             <TextField
+              onFocus={checkIfNameFocused}
+              onBlur={handleNameBlur}
               label="Name"
-              InputLabelProps={{
-                style: { color: "white", fontSize: "1.4rem" },
-              }}
-              placeholder="Please enter your name"
+              InputLabelProps={
+                nameShrinkState || nameFocused
+                  ? {
+                      shrink: true,
+                      style: {
+                        color: "white",
+                        fontSize: "1.5rem",
+                      },
+                    }
+                  : {
+                      shrink: false,
+                      style: {
+                        color: "white",
+                        fontSize: "1.5rem",
+                      },
+                    }
+              }
+              // placeholder="Please enter your name"
               className="textInputBox"
               InputProps={{
                 classes: {
@@ -100,10 +178,26 @@ export const ContactForm = (props) => {
 
             <TextField
               label="Email"
-              InputLabelProps={{
-                style: { color: "white", fontSize: "1.4rem" },
-              }}
-              placeholder="Please enter your email"
+              onFocus={checkIfEmailFocused}
+              onBlur={handleEmailBlur}
+              InputLabelProps={
+                emailShrinkState || emailFocused
+                  ? {
+                      shrink: true,
+                      style: {
+                        color: "white",
+                        fontSize: "1.5rem",
+                      },
+                    }
+                  : {
+                      shrink: false,
+                      style: {
+                        color: "white",
+                        fontSize: "1.5rem",
+                      },
+                    }
+              }
+              // placeholder="Please enter your email"
               className="textInputBox"
               InputProps={{
                 classes: {
@@ -121,7 +215,25 @@ export const ContactForm = (props) => {
           {/* <InputLabel children='Message' ></InputLabel> */}
           <TextField
             label="Message"
-            InputLabelProps={{ style: { color: "white", fontSize: "1.2rem" } }}
+            onFocus={checkIfMessageFocused}
+            onBlur={handleMessageBlur}
+            InputLabelProps={
+              messageShrinkState || messageFocused
+                ? {
+                    shrink: true,
+                    style: {
+                      color: "white",
+                      fontSize: "1.5rem",
+                    },
+                  }
+                : {
+                    shrink: false,
+                    style: {
+                      color: "white",
+                      fontSize: "1.5rem",
+                    },
+                  }
+            }
             InputProps={{
               classes: {
                 input: classes.input,
@@ -132,12 +244,12 @@ export const ContactForm = (props) => {
             variant="outlined"
             multiline
             rows={8}
-            placeholder="Please enter your message"
+            // placeholder="Please enter your message"
             onChange={handleChanges}
-            value={form.feedback}
+            value={form.message_html}
             name="message_html"
           />
-          <button>Click me</button>
+          <button className="formButton">Click me</button>
         </form>
       </div>
     </div>
