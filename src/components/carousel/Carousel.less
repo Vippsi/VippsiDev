@@ -1,44 +1,53 @@
-
-
 .carousel-container {
   display: flex;
   justify-content: center;
-  background-color: #42424D;
+  background-color: #42424d;
   height: 80vh;
   align-items: center;
   flex-direction: column;
-  
-    h3{
-        margin-top: 2%;
-        align-self: center;
-        font-size: 3rem;
-        color: #fefcfd;
-    }
-    .dash {
-        color: #FEFCFD;
-        align-self: center;
-        font-size: 4rem;
-        margin-bottom: 1%;
-    }
 
-  .carousel-control-next-icon {
-    height: 40px;
-    width: 40px;
-}
-
-.carousel-control-prev-icon {
-    height: 40px;
-    width: 40px;
-}
+  h3 {
+    margin-top: 2%;
+    align-self: center;
+    font-size: 3rem;
+    color: #fefcfd;
+  }
+  .dash {
+    color: #fefcfd;
+    align-self: center;
+    font-size: 4rem;
+    margin-bottom: 1%;
+  }
 
   .carousel {
     display: flex;
-    height: 500px;
-    // background-color: red;
+    height: 100%;
     width: 85%;
-    box-shadow: 0px -1px 15px -1px rgba(0,0,0,0.75);
+    // box-shadow: 0px -1px 15px -1px rgba(0, 0, 0, 0.75);
+    align-items: center;
+    border: 2px double yellow;
 
-    
+    .carousel-control-next {
+      margin-top: 15%;
+      margin-right: 3%;
+      width: 40px;
+      height: 40px;
+      .carousel-control-next-icon {
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .carousel-control-prev {
+      margin-top: 15%;
+      margin-left: 3%;
+      width: 40px;
+      height: 40px;
+      .carousel-control-prev-icon {
+        height: 40px;
+        width: 40px;
+      }
+    }
 
     .carousel-item {
       height: 50%;
@@ -47,7 +56,6 @@
       img {
         object-fit: contain;
       }
-      
 
       .carousel-caption {
         display: flex;
@@ -57,11 +65,9 @@
         h3 {
           font-weight: 500;
           align-self: center;
-          color: #FEFCFD;
+          color: #fefcfd;
         }
       }
     }
   }
 }
-
-
