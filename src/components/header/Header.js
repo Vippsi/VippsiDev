@@ -9,7 +9,7 @@ const Header = () => {
                 <h1 className='header-h1'>Jonathan Thornton</h1>
                 <p className='header-info'>Front End Developer</p>
                 {/* <button className='header-button' onClick >See my work</button> */}
-                <AnchorLink  className='header-button' href='#carousel'>See my work</AnchorLink>
+                <AnchorLink  className='header-button' href='#projects'>See my work</AnchorLink>
                 
             </div>
             

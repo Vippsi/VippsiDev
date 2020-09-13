@@ -54,12 +54,25 @@
 * {
   color: #FEFCFD;
 }
+* *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+* *::-webkit-scrollbar-thumb {
+  background: #F0C808;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+* *::-webkit-scrollbar-track {
+  background: #27262C;
+}
 .body-div {
   display: flex;
   justify-content: center;
   flex-direction: row;
   background-color: #27262C;
-  height: 75vh;
+  height: 60vh;
 }
 .body-div .content-div {
   display: flex;
@@ -67,7 +80,7 @@
   width: 90%;
 }
 .body-div .content-div .body-h3 {
-  margin-top: 5%;
+  margin-top: 2%;
   align-self: center;
   font-size: 3rem;
   color: #fefcfd;
@@ -76,7 +89,7 @@
   color: #FEFCFD;
   align-self: center;
   font-size: 4rem;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 .body-div .content-div .about-me-info {
   display: flex;
@@ -124,127 +137,180 @@
 }
 .project-div {
   height: 25vh;
-  background-color: #37323E;
 }
-.carousel-container {
+.scrollDiv .carouselDiv {
   display: flex;
-  justify-content: center;
-  background-color: #42424d;
-  height: 80vh;
-  align-items: center;
+  background: #42424d;
   flex-direction: column;
+  align-items: center;
 }
-.carousel-container h3 {
-  margin-top: 2%;
-  align-self: center;
+.scrollDiv .carouselDiv h3 {
   font-size: 3rem;
-  color: #fefcfd;
+  margin-top: 2%;
 }
-.carousel-container .dash {
+.scrollDiv .carouselDiv .dash {
   color: #fefcfd;
   align-self: center;
   font-size: 4rem;
-  margin-bottom: 1%;
 }
-.carousel-container .carousel {
-  display: flex;
-  height: 100%;
-  width: 85%;
-  align-items: center;
-  border: 2px double yellow;
-}
-.carousel-container .carousel .carousel-control-next {
-  margin-top: 15%;
-  margin-right: 3%;
-  width: 40px;
-  height: 40px;
-}
-.carousel-container .carousel .carousel-control-next .carousel-control-next-icon {
-  height: 40px;
-  width: 40px;
-}
-.carousel-container .carousel .carousel-control-prev {
-  margin-top: 15%;
-  margin-left: 3%;
-  width: 40px;
-  height: 40px;
-}
-.carousel-container .carousel .carousel-control-prev .carousel-control-prev-icon {
-  height: 40px;
-  width: 40px;
-}
-.carousel-container .carousel .carousel-item {
-  height: 50%;
+.scrollDiv .outerCardList {
   width: 100%;
-}
-.carousel-container .carousel .carousel-item img {
-  object-fit: contain;
-}
-.carousel-container .carousel .carousel-item .carousel-caption {
+  height: 60vh;
+  margin: 0;
   display: flex;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: #42424d;
   justify-content: center;
   align-items: center;
 }
-.carousel-container .carousel .carousel-item .carousel-caption h3 {
-  font-weight: 500;
-  align-self: center;
-  color: #fefcfd;
-}
-.bigCardGroupDiv {
-  align-self: center;
-  height: ;
+.scrollDiv .cardList {
+  margin: 0;
+  transform: rotate(-90deg);
+  background: #42424d;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bigCardGroupDiv .cardGroupDiv {
-  margin: 1% 1%;
-  width: 75%;
-  display: flex;
+  padding: 3rem;
+  flex-direction: column;
+  height: 335%;
+  width: 30%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 0.2s;
   justify-content: space-between;
 }
-.bigCardGroupDiv .cardGroupDiv .cardButtons {
-  color: black;
+.scrollDiv .cardList::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  bottom: 0;
+}
+.scrollDiv .cardList::-webkit-scrollbar-thumb {
+  background: #f0c808;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .cardContainer {
   display: flex;
-  max-width: 100%;
-  justify-content: center;
-  min-height: 550px;
+  margin: 15% 0;
+  transform: rotate(90deg);
 }
-.cardContainer .cardDiv {
-  display: flex;
-  border: 2px solid blue;
-  width: 45%;
-  flex-direction: column;
-  height: 100%;
-}
-.cardContainer .cardDiv .cardImgDiv {
-  display: flex;
-  justify-content: center;
-  border: 1px solid green;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  align-self: center;
-  overflow: hidden;
-}
-.cardContainer .cardDiv .cardImgDiv img {
-  width: 100%;
-  object-fit: cover;
-}
-.cardContainer .cardDiv .cardContentDiv {
+.cardContainer .card {
+  height: 450px;
+  width: 650px;
+  min-width: 650px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #15141d;
+  box-shadow: -1rem 0 3rem #000;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #999999;
+  transition: 0.2s;
+  scroll-snap-align: start;
+  clear: both;
+  position: relative;
+}
+.cardContainer .card:hover {
+  transform: translate(-3rem, -3rem);
+  margin-right: 20%;
+}
+.cardContainer .card-header {
+  margin-bottom: auto;
+}
+.cardContainer .card-header p {
+  font-size: 14px;
+  margin: 0 0 1rem;
+  color: #7a7a8c;
+}
+.cardContainer .card-header h {
+  font-size: 2rem;
+  margin: 0.25rem 0 auto;
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
   border: 1px solid red;
 }
-.cardContainer .cardDiv .cardContentDiv .cardTextDiv {
+.cardContainer .card-header img {
+  height: 150px;
+  width: 80%;
+  border-radius: 20px;
+  object-position: center;
+}
+.cardContainer .skillsItemsDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 75%;
+  margin-top: 45%;
+  width: 75%;
+  font-size: 1.2rem;
+  list-style: none;
+}
+.cardContainer .skillsUsed {
+  position: absolute;
+  margin: 6% 7% 0% 0%;
+  top: 27px;
+  right: 0;
+}
+.cardContainer .skillsList {
+  background: #27262c;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+  padding: 5% 0;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 16px;
+}
+.cardContainer .projectButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 1%;
+}
+.cardContainer .cardButton {
+  width: 120px;
+  align-self: center;
+  margin-top: 3%;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fefcfd;
+  border: 2px double #f0c808;
+  font-weight: 500;
+  text-decoration: none;
+}
+.cardContainer .cardButton:hover {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.cardContainer .cardButtonBlue {
+  border: 2px double #0892a5;
+  width: 120px;
+  align-self: center;
+  margin-top: 3%;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fefcfd;
+  font-weight: 500;
+  text-decoration: none;
+}
+.cardContainer .cardButtonBlue:hover {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.cardContainer .projectTextList p {
+  padding: 0 2% 0 0;
+  width: 60%;
+  word-wrap: break-word;
 }
 .contactForm-container {
   display: flex;

@@ -1,13 +1,31 @@
 *{
     color: #FEFCFD;
+
+    *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      
+      *::-webkit-scrollbar-thumb {
+        background:  #F0C808;
+        border-radius: 10px;
+        border: 1px solid black;
+        box-shadow: inset 2px 2px 2px rgba(0,0,0, .2);
+      }
+      *::-webkit-scrollbar-track {
+          background:#27262C;
+      }
 }
 .body-div {
+    
   display: flex;
   justify-content: center;
   flex-direction: row;
 //   align-items: center;
   background-color: #27262C;
-  height: 75vh;
+  height: 60vh;
+
+ 
  
 
   .content-div {
@@ -16,7 +34,7 @@
     width: 90%;
 
     .body-h3 {
-        margin-top: 5%;
+        margin-top: 2%;
         align-self: center;
         font-size: 3rem;
         color: #fefcfd;
@@ -25,7 +43,7 @@
           color: #FEFCFD;
           align-self: center;
           font-size: 4rem;
-          margin-bottom: 2%;
+          margin-bottom: 1%;
       }
 
       .about-me-info {

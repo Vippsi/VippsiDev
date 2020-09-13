@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/header/Header";
 import Body from "./components/body/Body";
 import Project from './components/projects/Project'
-import ControlledCarousel from './components/carousel/Carousel'
+import CardGroup from './components/carousel/CardGroup'
 import ContactForm from './components/contactForm/ContactForm'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Body />
       </div>
       <div>
-        <ControlledCarousel/>
+        <CardGroup/>
       </div>
       <div>
         <ContactForm/>
