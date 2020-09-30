@@ -52,26 +52,26 @@
   text-decoration: none;
 }
 * {
-  color: #FEFCFD;
+  color: #fefcfd;
 }
 * *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 * *::-webkit-scrollbar-thumb {
-  background: #F0C808;
+  background: #f0c808;
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 * *::-webkit-scrollbar-track {
-  background: #27262C;
+  background: #27262c;
 }
 .body-div {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  background-color: #27262C;
+  background-color: #27262c;
   height: 60vh;
 }
 .body-div .content-div {
@@ -86,7 +86,7 @@
   color: #fefcfd;
 }
 .body-div .content-div .dash {
-  color: #FEFCFD;
+  color: #fefcfd;
   align-self: center;
   font-size: 4rem;
   margin-bottom: 1%;
@@ -95,12 +95,13 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  margin: auto 0;
 }
 .body-div .content-div .about-me-text {
-  background-color: #1C1C21;
+  background-color: #1c1c21;
   display: flex;
   flex-direction: column;
-  border: 7px double #0892A5;
+  border: 7px double #0892a5;
   justify-content: center;
   align-self: center;
   width: 60%;
@@ -116,14 +117,14 @@
   font-weight: 500;
 }
 .body-div .content-div .skills {
-  background-color: #1C1C21;
+  background-color: #1c1c21;
   display: flex;
   flex-direction: column;
   width: 20%;
   align-self: center;
   justify-content: center;
   align-items: center;
-  border: 7px double #F0C808;
+  border: 7px double #f0c808;
   height: 300px;
   font-size: 1.1rem;
 }
@@ -181,7 +182,6 @@
 .scrollDiv .cardList::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  bottom: 0;
 }
 .scrollDiv .cardList::-webkit-scrollbar-thumb {
   background: #f0c808;
@@ -196,7 +196,7 @@
 }
 .cardContainer .card {
   height: 450px;
-  width: 650px;
+  width: 700px;
   min-width: 650px;
   padding: 1.5rem;
   border-radius: 16px;
@@ -220,16 +220,10 @@
   font-size: 14px;
   margin: 0 0 1rem;
   color: #7a7a8c;
+  width: 72%;
 }
-.cardContainer .card-header h {
-  font-size: 2rem;
-  margin: 0.25rem 0 auto;
-  text-decoration: none;
-  color: inherit;
-  border: 0;
-  display: inline-block;
-  cursor: pointer;
-  border: 1px solid red;
+.cardContainer .title {
+  width: 70%;
 }
 .cardContainer .card-header img {
   height: 150px;
@@ -241,12 +235,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   height: 75%;
   margin-top: 45%;
   width: 75%;
   font-size: 1.2rem;
   list-style: none;
+}
+.cardContainer .skillsItemsDiv li {
+  margin: 8%;
+  text-align: center;
 }
 .cardContainer .skillsUsed {
   position: absolute;
@@ -269,11 +266,22 @@
   right: 0;
   border-radius: 16px;
 }
+.cardContainer .projectTextList {
+  width: 70%;
+}
+.cardContainer .projectTextList li > p {
+  width: 100%;
+}
+.cardContainer .projectButtonsDiv {
+  width: 60%;
+  height: 50px;
+}
 .cardContainer .projectButtons {
   display: flex;
   justify-content: space-between;
-  width: 60%;
   margin: 1%;
+  align-items: center;
+  height: 100%;
 }
 .cardContainer .cardButton {
   width: 120px;
@@ -283,13 +291,21 @@
   background-color: rgba(0, 0, 0, 0);
   color: #fefcfd;
   border: 2px double #f0c808;
+  padding: 1%;
   font-weight: 500;
   text-decoration: none;
 }
 .cardContainer .cardButton:hover {
-  font-weight: 400;
-  font-size: 1.2rem;
+  padding: 1.5%;
   text-decoration: none;
+}
+.cardContainer .cardButton a {
+  color: #fefcfd;
+}
+.cardContainer .cardButton a:hover,
+.cardContainer .cardButton a :visited {
+  text-decoration: none;
+  color: #fefcfd;
 }
 .cardContainer .cardButtonBlue {
   border: 2px double #0892a5;
@@ -299,13 +315,21 @@
   font-size: 1rem;
   background-color: rgba(0, 0, 0, 0);
   color: #fefcfd;
+  padding: 1%;
   font-weight: 500;
   text-decoration: none;
 }
 .cardContainer .cardButtonBlue:hover {
-  font-weight: 400;
-  font-size: 1.2rem;
+  padding: 1.5%;
   text-decoration: none;
+}
+.cardContainer .cardButtonBlue a {
+  color: #fefcfd;
+}
+.cardContainer .cardButtonBlue a:hover,
+.cardContainer .cardButtonBlue a :visited {
+  text-decoration: none;
+  color: #fefcfd;
 }
 .cardContainer .projectTextList p {
   padding: 0 2% 0 0;

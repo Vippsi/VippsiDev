@@ -5,7 +5,7 @@
 
   .card {
     height: 450px;
-    width: 650px;
+    width: 700px;
     min-width: 650px;
     padding: 1.5rem;
     border-radius: 16px;
@@ -32,17 +32,10 @@
     font-size: 14px;
     margin: 0 0 1rem;
     color: #7a7a8c;
+    width: 72%;
   }
-
-  .card-header h {
-    font-size: 2rem;
-    margin: 0.25rem 0 auto;
-    text-decoration: none;
-    color: inherit;
-    border: 0;
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid red;
+  .title {
+    width: 70%;
   }
   .card-header img {
     height: 150px;
@@ -55,12 +48,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     height: 75%;
     margin-top: 45%;
     width: 75%;
     font-size: 1.2rem;
     list-style: none;
+
+    li {
+      margin: 8%;
+      text-align: center;
+    }
   }
 
   .skillsUsed {
@@ -87,12 +85,29 @@
     border-radius: 16px;
   }
 
+  .projectTextList {
+    // border: 1px solid red;
+    width: 70%;
+
+    li > p {
+      width: 100%;
+    }
+  }
+
+  .projectButtonsDiv {
+    // border: 1px solid blue;
+    width: 60%;
+    height: 50px;
+    // margin-bottom: 3%;
+  }
+
   .projectButtons {
     display: flex;
     justify-content: space-between;
     // border: 1px solid red;
-    width: 60%;
     margin: 1%;
+    align-items: center;
+    height: 100%;
   }
 
   .cardButton {
@@ -103,14 +118,24 @@
     background-color: rgba(0, 0, 0, 0);
     color: #fefcfd;
     border: 2px double #f0c808;
-    // padding: 0.5%;
+    padding: 1%;
     font-weight: 500;
     text-decoration: none;
 
     &:hover {
-      font-weight: 400;
-      font-size: 1.2rem;
+      padding: 1.5%;
+      // font-size: 1.1rem;
       text-decoration: none;
+    }
+
+    a {
+      color: #fefcfd;
+
+      &:hover,
+      :visited {
+        text-decoration: none;
+        color: #fefcfd;
+      }
     }
   }
 
@@ -122,14 +147,24 @@
     font-size: 1rem;
     background-color: rgba(0, 0, 0, 0);
     color: #fefcfd;
-    // padding: 0.5%;
+    padding: 1%;
     font-weight: 500;
     text-decoration: none;
 
     &:hover {
-      font-weight: 400;
-      font-size: 1.2rem;
+      padding: 1.5%;
+
       text-decoration: none;
+    }
+
+    a {
+      color: #fefcfd;
+
+      &:hover,
+      :visited {
+        text-decoration: none;
+        color: #fefcfd;
+      }
     }
   }
 
