@@ -1,43 +1,56 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MA from "../../img/MA.PNG";
 
-export const Card = () => {
+export const Card = (props) => {
+  console.log(props.project.skills);
+
   return (
-      <div className="cardContainer">
-        <article className="card">
-          <header className="card-header">
-            <h3>Minimal Arena</h3>
-            <p>Test Title</p>
-            <ul className="skillsList">
-              <h3 className="skillsUsed">Skills Used:</h3>
-              <div className="skillsItemsDiv">
-                <li>React</li>
-                <li>React</li>
-                <li>React</li>
-                <li>React</li>
-              </div>
-            </ul>
-            <ul className="projectTextList">
+    <div className="cardContainer">
+      <article className="card">
+        <header className="card-header">
+          <h3 className="title">{props.project.title}</h3>
+          <p>{props.project.mission}</p>
+          <ul className="skillsList">
+            <h3 className="skillsUsed">Skills Used:</h3>
+            <div className="skillsItemsDiv">
+              {props.project.skills.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </div>
+          </ul>
+          <ul className="projectTextList">
+            {props.project.bulletpoints.map((bullet) => (
               <li>
-                <p>On this project I... </p>
+                <p>{bullet}</p>
               </li>
-              <li>
-                <p>On this project I... </p>
-              </li>
-              <li>
-                <p>
-                  On this project I... Did some thing and did some stuff this is
-                  just temporary text that I need in place so I can style{" "}
-                </p>
-              </li>
-            </ul>
-          </header>
+            ))}
+          </ul>
+        </header>
+        <div className="projectButtonsDiv">
           <div className="projectButtons">
-            <button className="cardButton">GitHub</button>
-            <button className="cardButtonBlue">Demo</button>
+            {props.project.github === undefined ? (
+              <> </>
+            ) : (
+              <button className="cardButton">
+                <a target="_blank" href={props.project.github}>
+                  Github
+                </a>
+              </button>
+            )}
+            {props.project.demo === undefined ? (
+              <></>
+            ) : (
+              <button className="cardButtonBlue">
+                <a target="_blank" href={props.project.demo}>
+                  Demo
+                </a>
+              </button>
+            )}
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
+    </div>
   );
 };
 

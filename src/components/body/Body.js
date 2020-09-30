@@ -3,8 +3,6 @@ const Body = () => {
   return (
       <div className="body-div">
           <div className='content-div'>
-            <h3 className='body-h3'>PlaceHolder</h3>
-            <div className='dash'>&mdash;</div>
             <div className='about-me-info'>
                 <div className='about-me-text'>
                     <h3>About Me</h3>
