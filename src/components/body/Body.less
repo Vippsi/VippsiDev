@@ -24,10 +24,18 @@
   background-color: #27262c;
   height: 60vh;
 
+  @media (max-width: 500px) {
+    height: 95vh;
+  }
+
   .content-div {
     display: flex;
     flex-direction: column;
     width: 90%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
 
     .body-h3 {
       margin-top: 2%;
@@ -47,6 +55,14 @@
       width: 100%;
       justify-content: space-evenly;
       margin: auto 0;
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+        // margin: auto 0;
+      }
     }
     .about-me-text {
       background-color: #1c1c21;
@@ -58,6 +74,12 @@
       width: 60%;
       height: 300px;
 
+      @media (max-width: 500px) {
+        width: 100%;
+
+        border: none;
+      }
+
       h3 {
         text-align: center;
         font-size: 2rem;
@@ -67,6 +89,10 @@
         margin-top: 2%;
         padding: 0 2%;
         font-weight: 500;
+
+        @media (max-width: 500px) {
+          text-align: center;
+        }
       }
     }
     .skills {
@@ -80,6 +106,12 @@
       border: 7px double #f0c808;
       height: 300px;
       font-size: 1.1rem;
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-top: 5%;
+        border: none;
+      }
 
       h3 {
         font-size: 2rem;
