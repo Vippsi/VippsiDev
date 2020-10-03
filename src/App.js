@@ -4,7 +4,6 @@ import "./css/index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/header/Header";
 import Body from "./components/body/Body";
-import Project from './components/projects/Project'
 import CardGroup from './components/carousel/CardGroup'
 import ContactForm from './components/contactForm/ContactForm'
 

@@ -1,59 +1,78 @@
-*{
-    margin: 0;
-
+* {
+  margin: 0;
 }
 
 .header-div {
- display: flex;
- flex-direction: column;
- align-items: center;
- position: relative;
- height: 100vh;
- overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
 
+  .hero-img {
+    height: 100%;
+    position: absolute;
+  }
 
-    .hero-img {
-        height: 100%;
-        position: absolute;
-        
+  .text-div {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 500px) {
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin-top: 0;
     }
 
-    .text-div{
-        margin-top: 15%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        
-        .header-h1 {
-           font-size: 5rem;
-           color:#FEFCFD;
-           margin-bottom: 1%;
-           font-weight: 400;
-        }
-        .header-info {
-            font-size: 2rem;
-            color: #FEFCFD;
-            margin-bottom: 2%;
-            
-        }
-        .header-button {
-            font-size: 1.4rem;
-            background-color: rgba(0, 0, 0, 0);
-            color: #FEFCFD;
-            border: 2px double #F0C808;
-            padding: 1%;
-            font-weight: 500;
-            text-decoration: none;
+    .header-h1 {
+      font-size: 5rem;
+      color: #fefcfd;
+      margin-bottom: 1%;
+      font-weight: 400;
 
-            &:hover {
-                font-weight: 400;
-                font-size: 1.5rem;
-                text-decoration: none;
-            }
-
-
-        }
+      @media (max-width: 500px) {
+        font-size: 3rem;
+        text-align: center;
+      }
     }
+    .header-info {
+      font-size: 2rem;
+      color: #fefcfd;
+      margin-bottom: 2%;
+
+      @media (max-width: 500px) {
+        font-size: 1.8rem;
+      }
+    }
+    .header-button {
+      font-size: 1.4rem;
+      background-color: rgba(0, 0, 0, 0);
+      color: #fefcfd;
+      border: 2px double #f0c808;
+      padding: 1%;
+      font-weight: 500;
+      text-decoration: none;
+
+
+      @media (max-width: 500px) {
+          font-size: 1.3rem;
+          padding: 1.25%;
+          margin-top: 1%;
+          width: 55%;
+          text-align: center;
+       }
+ 
+
+      &:hover {
+        font-weight: 400;
+        font-size: 1.35rem;
+        text-decoration: none;
+      }
+    }
+  }
 }
-
