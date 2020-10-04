@@ -18,6 +18,10 @@
     h3 {
       font-size: 3rem;
       margin-top: 2%;
+
+      @media(max-width: 500px) {
+        margin-top: 5%;
+      }
     }
     .dash {
       color: #fefcfd;
@@ -40,8 +44,8 @@
     align-items: center;
 
     @media (max-width: 500px) {
-      border: 1px solid red;
-      }
+      height: 500px;
+    }
   }
 
   .cardList {
@@ -58,24 +62,28 @@
     width: 30%;
     overflow-x: hidden;
     overflow-y: scroll;
-    // transform: rotate(90deg);
     transition: 0.2s;
     justify-content: space-between;
 
     @media (max-width: 500px) {
-    border: 1px solid red;
-    width: 100%;
+      width: 900px;
+      height: 100%;
+      padding: 0;
+      width: 100vw;
+      transform: none;
+      align-items: center;
     }
-
-    //  margin-bottom:50% ;
   }
 
   .cardList::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
 
-  
+    @media (max-width: 500px) {
+      width: 0px;
+      height: 0px;
+    }
+  }
 
   .cardList::-webkit-scrollbar-thumb {
     background: #f0c808;
@@ -83,12 +91,11 @@
     border: 1px solid black;
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
 
-
-    // @media (max-width: 500px) {
-    //   background: none;
-    // border-radius: 0;
-    // border: none;
-    // box-shadow:none;
-    //   }
+    @media (max-width: 500px) {
+      background: none;
+      border-radius: 0px;
+      border: none;
+      box-shadow: none;
+    }
   }
 }
